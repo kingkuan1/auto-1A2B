@@ -1,0 +1,29 @@
+n = int(input("> "))
+while True:
+    a =random.randint(1000, 10000)
+    if len(set(str(a))) == 4:
+        break
+print(a)
+d= list(str(a))
+c = []
+for i in range(n):
+    while True:
+        b =[random.randint(1000, 10000) for k in range(n)]
+        if len(set(str(b[i]))) == 4:
+            c.append(b[i])
+            break
+print(c)
+
+for l in range(n):
+    e = list(str(c[l]))
+    sum = 0
+    ex = 0
+    for m in range(4):
+        if e[m] == d[m]:
+            sum += 1
+        if e[m] in d:
+            ex += 1
+        r = ex - sum
+
+    print(l+1, str(c[l])," : ", sum, "A" , r, "B", end= " ")
+    print()
